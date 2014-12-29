@@ -1,7 +1,3 @@
-/**
- * Created by tosin on 28/12/2014.
- */
-
 package io.creativecode.hopperbus.fragments;
 
 import android.os.Bundle;
@@ -125,8 +121,26 @@ public class SlidingTabsBasicFragment extends Fragment {
             container.addView(view);
 
             // Retrieve a TextView from the inflated View, and update it's text
-            TextView title = (TextView) view.findViewById(R.id.item_title);
-            title.setText(String.valueOf(position + 1));
+            TextView route_title = (TextView) view.findViewById(R.id.route_title);
+
+            switch (position) {
+                // Possibly use an enum here
+                case 0:
+                    route_title.setText(R.string.route_901_title);
+                    break;
+                case 1:
+                    route_title.setText(R.string.route_902_title);
+                    break;
+                case 2:
+                    route_title.setText(R.string.route_903_title);
+                    break;
+                case 3:
+                    route_title.setText(R.string.route_904_title);
+                    break;
+                default:
+                    route_title.setText(R.string.route_901_title);
+                    break;
+            }
 
             Log.i(LOG_TAG, "instantiateItem() [position: " + position + "]");
 

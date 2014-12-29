@@ -2,10 +2,13 @@
 <resources>
 
     <string name="app_name">HOPPER BUS</string>
-    <string name="textview">Tosin learns Android!</string>
-    <string name="button">Update the TextView</string>
-    <string name="hint">A Name!</string>
-    <string name="action_settings">Settings</string>
+
     <string name="action_map">Campus Maps</string>
+
+    <!-- Route Titles -->
+    <string name="route_901_title">901 - Sutton Bonnington Campus</string>
+    <string name="route_902_title">902 - Kings Meadow Campus</string>
+    <string name="route_903_title">903 - Jubilee Campus</string>
+    <string name="route_904_title">904 - Royal Derby Hospital</string>
 
 </resources>
