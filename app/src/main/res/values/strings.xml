@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">HOPPER BUS</string>
+    <string name="textview">Tosin learns Android!</string>
+    <string name="button">Update the TextView</string>
+    <string name="hint">A Name!</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_map">Campus Maps</string>
+
+</resources>
