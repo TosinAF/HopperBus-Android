@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package io.creativecode.hopperbus;
+package io.creativecode.hopperbus.views.widgets;
 
 import android.content.Context;
 import android.graphics.Color;

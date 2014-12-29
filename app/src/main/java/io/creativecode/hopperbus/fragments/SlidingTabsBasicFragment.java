@@ -1,4 +1,8 @@
-package io.creativecode.hopperbus;
+/**
+ * Created by tosin on 28/12/2014.
+ */
+
+package io.creativecode.hopperbus.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -10,9 +14,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-/**
- * Created by tosin on 28/12/2014.
- */
+import io.creativecode.hopperbus.R;
+import io.creativecode.hopperbus.views.widgets.SlidingTabLayout;
+
+
 public class SlidingTabsBasicFragment extends Fragment {
 
     static final String LOG_TAG = "SlidingTabsBasicFragment";
@@ -21,7 +26,7 @@ public class SlidingTabsBasicFragment extends Fragment {
      * A custom {@link ViewPager} title strip which looks much like Tabs present in Android v4.0 and
      * above, but is designed to give continuous feedback to the user when scrolling.
      */
-    private io.creativecode.hopperbus.SlidingTabLayout mSlidingTabLayout;
+    private SlidingTabLayout mSlidingTabLayout;
 
     /**
      * A {@link ViewPager} which will be used in conjunction with the {@link SlidingTabLayout} above.
@@ -59,7 +64,7 @@ public class SlidingTabsBasicFragment extends Fragment {
         // BEGIN_INCLUDE (setup_slidingtablayout)
         // Give the SlidingTabLayout the ViewPager, this must be done AFTER the ViewPager has had
         // it's PagerAdapter set.
-        mSlidingTabLayout = (io.creativecode.hopperbus.SlidingTabLayout) view.findViewById(R.id.sliding_tabs);
+        mSlidingTabLayout = (SlidingTabLayout) view.findViewById(R.id.sliding_tabs);
         mSlidingTabLayout.setDistributeEvenly(true);
         mSlidingTabLayout.setViewPager(mViewPager);
         //mSlidingTabLayout.setDividerColors(Color.TRANSPARENT);

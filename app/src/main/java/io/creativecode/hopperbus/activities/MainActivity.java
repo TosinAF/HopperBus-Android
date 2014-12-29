@@ -1,10 +1,12 @@
-package io.creativecode.hopperbus;
+package io.creativecode.hopperbus.activities;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
+
+import io.creativecode.hopperbus.R;
+import io.creativecode.hopperbus.fragments.SlidingTabsBasicFragment;
 
 
 public class MainActivity extends ActionBarActivity  {
@@ -19,6 +21,7 @@ public class MainActivity extends ActionBarActivity  {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        configureActionBar();
 
         if (savedInstanceState == null) {
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
@@ -26,11 +29,11 @@ public class MainActivity extends ActionBarActivity  {
             transaction.replace(R.id.sample_content_fragment, fragment);
             transaction.commit();
         }
+    }
 
-        final ActionBar actionBar = getSupportActionBar();
-
-        actionBar.setDisplayShowHomeEnabled(true);
-        actionBar.setIcon(R.drawable.hb_logo);
+    private void configureActionBar() {
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setIcon(R.drawable.hb_logo);
         getSupportActionBar().setElevation(0);
     }
 }

@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <io.creativecode.hopperbus.SlidingTabLayout
+    <io.creativecode.hopperbus.views.widgets.SlidingTabLayout
         style="@style/SlidingTabLayout"
         android:id="@+id/sliding_tabs"
         android:layout_width="match_parent"
