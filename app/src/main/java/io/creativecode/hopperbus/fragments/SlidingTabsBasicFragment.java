@@ -8,9 +8,11 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import io.creativecode.hopperbus.R;
+import io.creativecode.hopperbus.views.adapters.RouteAdapter;
 import io.creativecode.hopperbus.views.widgets.SlidingTabLayout;
 
 
@@ -121,28 +123,37 @@ public class SlidingTabsBasicFragment extends Fragment {
             container.addView(view);
 
             // Retrieve a TextView from the inflated View, and update it's text
-            TextView route_title = (TextView) view.findViewById(R.id.route_title);
+            TextView routeTitleTextView = (TextView) view.findViewById(R.id.text_route_title);
+            ListView routeStopsListView = (ListView) view.findViewById(R.id.list_route_stops);
+
 
             switch (position) {
                 // Possibly use an enum here
                 case 0:
-                    route_title.setText(R.string.route_901_title);
+                    routeTitleTextView.setText(R.string.route_901_title);
                     break;
                 case 1:
-                    route_title.setText(R.string.route_902_title);
+                    routeTitleTextView.setText(R.string.route_902_title);
                     break;
                 case 2:
-                    route_title.setText(R.string.route_903_title);
+                    routeTitleTextView.setText(R.string.route_903_title);
                     break;
                 case 3:
-                    route_title.setText(R.string.route_904_title);
+                    routeTitleTextView.setText(R.string.route_904_title);
                     break;
                 default:
-                    route_title.setText(R.string.route_901_title);
+                    routeTitleTextView.setText(R.string.route_901_title);
                     break;
             }
 
-            Log.i(LOG_TAG, "instantiateItem() [position: " + position + "]");
+            // Manage List View
+
+            RouteAdapter routeAdapter = new RouteAdapter(getActivity(), getActivity().getLayoutInflater());
+            routeStopsListView.setAdapter(routeAdapter);
+
+
+
+            //Log.i(LOG_TAG, "instantiateItem() [position: " + position + "]");
 
             // Return the View
             return view;

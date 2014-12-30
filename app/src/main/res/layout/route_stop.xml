@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="65dp">
+
+    <TextView
+        android:id="@+id/text_time"
+        android:text="8:45 am"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        />
+
+    <View
+        android:layout_width="3dp"
+        android:layout_height="65dp"
+        android:layout_marginLeft="30dp"
+        android:layout_toRightOf="@+id/text_time"
+        android:background="@color/light_gray"
+        />
+
+    <View
+        android:id="@+id/circle"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:layout_marginLeft="26dp"
+        android:layout_toRightOf="@+id/text_time"
+        android:layout_centerVertical="true"
+        android:background="@drawable/circle_empty"
+        />
+
+    <TextView
+        android:id="@+id/text_stop_name"
+        android:text="University Park, East Drive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/text_time"
+        android:layout_marginLeft="60dp"
+        android:layout_centerVertical="true"
+        />
+
+</RelativeLayout>
