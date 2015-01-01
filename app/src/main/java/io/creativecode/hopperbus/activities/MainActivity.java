@@ -6,7 +6,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 
 import io.creativecode.hopperbus.R;
-import io.creativecode.hopperbus.fragments.SlidingTabsBasicFragment;
+import io.creativecode.hopperbus.fragments.RouteFragment;
 
 
 public class MainActivity extends ActionBarActivity  {
@@ -25,7 +25,7 @@ public class MainActivity extends ActionBarActivity  {
 
         if (savedInstanceState == null) {
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-            SlidingTabsBasicFragment fragment = new SlidingTabsBasicFragment();
+            RouteFragment fragment = new RouteFragment();
             transaction.replace(R.id.sample_content_fragment, fragment);
             transaction.commit();
         }

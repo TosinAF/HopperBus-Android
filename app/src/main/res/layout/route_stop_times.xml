@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="110dp"
+    android:minHeight="110dip"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp">
+
+    <TextView
+        android:id="@+id/text_stop_name"
+        android:text="University Park, East Drive"
+        android:textSize="17sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <TextView
+            android:id="@+id/text_time1"
+            android:text="8:45 am"
+            android:textSize="17sp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp"
+            />
+
+        <TextView
+            android:id="@+id/text_time2"
+            android:text="9:10 am"
+            android:textSize="17sp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp"
+            />
+
+        <TextView
+            android:id="@+id/text_time3"
+            android:text="9:50 am"
+            android:textSize="17sp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp"
+            />
+
+        </LinearLayout>
+
+</LinearLayout>
