@@ -12,10 +12,12 @@ import io.creativecode.hopperbus.R;
 
 public class RouteAdapter extends BaseAdapter {
 
+    private int type;
     private Context mContext;
     private LayoutInflater mInflater;
 
-    public RouteAdapter(Context context, LayoutInflater inflater) {
+    public RouteAdapter(Context context, LayoutInflater inflater, int type) {
+        this.type = type;
         mContext = context;
         mInflater = inflater;
     }
@@ -58,11 +60,7 @@ public class RouteAdapter extends BaseAdapter {
         }
 
         int lineViewHeightDP = position == 9 ? 35 : 65 ;
-
         int lineViewHeightPixels = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, lineViewHeightDP, mContext.getResources().getDisplayMetrics());
-
-        final float scale = mContext.getResources().getDisplayMetrics().density;
-        //int lineViewHeightPixels = (int) (lineViewHeightDP * scale + 0.5f);
 
         holder.lineView.getLayoutParams().height = lineViewHeightPixels;
 
@@ -78,7 +76,7 @@ public class RouteAdapter extends BaseAdapter {
 
     @Override
     public String getItem(int position) {
-        return "";
+        return String.valueOf(type);
     }
 
     @Override

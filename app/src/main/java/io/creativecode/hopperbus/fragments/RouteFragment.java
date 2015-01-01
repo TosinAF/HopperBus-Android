@@ -4,9 +4,11 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -58,8 +60,6 @@ public class RouteFragment extends Fragment {
         public CharSequence getPageTitle(int position) {
             return "90" + (position + 1);
         }
-        // END_INCLUDE (pageradapter_getpagetitle)
-
 
         @Override
         public Object instantiateItem(ViewGroup container, int position) {
@@ -68,8 +68,7 @@ public class RouteFragment extends Fragment {
             container.addView(view);
 
             TextView routeTitleTextView = (TextView) view.findViewById(R.id.text_route_title);
-            ListView routeStopsListView = (ListView) view.findViewById(R.id.list_route_stops);
-
+            final ListView routeStopsListView = (ListView) view.findViewById(R.id.list_route_stops);
 
             switch (position) {
                 // Possibly use an enum here
@@ -91,6 +90,7 @@ public class RouteFragment extends Fragment {
             }
 
             // Manage List View
+            // Create an array of route adapters
 
             if (position == 0) {
 
@@ -99,9 +99,29 @@ public class RouteFragment extends Fragment {
 
             } else {
 
-                RouteAdapter routeAdapter = new RouteAdapter(getActivity(), getActivity().getLayoutInflater());
+                RouteAdapter routeAdapter = new RouteAdapter(getActivity(), getActivity().getLayoutInflater(), position);
                 routeStopsListView.setAdapter(routeAdapter);
             }
+
+            routeStopsListView.setClickable(true);
+            routeStopsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+                @Override
+                public void onItemClick(AdapterView<?> arg0, View v, int index, long arg3) {
+                    Log.i("click", "click detected");
+
+                }
+            });
+
+            routeStopsListView.setLongClickable(true);
+            routeStopsListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+
+                public boolean onItemLongClick(AdapterView<?> arg0, View v, int index, long arg3) {
+                    Log.i("click", "long click detected");
+                    return true;
+
+                }
+            });
 
             return view;
         }
