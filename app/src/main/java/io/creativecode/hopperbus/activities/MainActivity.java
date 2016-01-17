@@ -3,10 +3,12 @@ package io.creativecode.hopperbus.activities;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 
 import io.creativecode.hopperbus.R;
 import io.creativecode.hopperbus.fragments.RouteFragment;
+import io.creativecode.hopperbus.presenters.DataProvider;
 
 
 public class MainActivity extends ActionBarActivity  {
@@ -22,6 +24,10 @@ public class MainActivity extends ActionBarActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         configureActionBar();
+
+        Log.i("Rfkjfjkfjf", "FaifffhjhfhRRd");
+
+        DataProvider p = new DataProvider(this);
 
         if (savedInstanceState == null) {
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
