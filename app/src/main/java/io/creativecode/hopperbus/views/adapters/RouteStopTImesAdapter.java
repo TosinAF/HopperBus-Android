@@ -9,8 +9,10 @@ import android.widget.TextView;
 
 import io.creativecode.hopperbus.R;
 
+/**
+ * Created by EmmanuelAbiola on 24/05/16.
+ */
 public class RouteStopTimesAdapter extends BaseAdapter {
-
     private Context mContext;
     private LayoutInflater mInflater;
 
@@ -64,4 +66,5 @@ public class RouteStopTimesAdapter extends BaseAdapter {
     public long getItemId(int position) {
         return position;
     }
+
 }

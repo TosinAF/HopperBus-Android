@@ -42,10 +42,10 @@ public class BusList extends MainActivity {
             HashMap<String, String> m_li;
 
             for (int i = 0; i < dataArray.length(); i++) {
-                JSONObject jo_inside = dataArray.getJSONObject(i);
-                Log.d("Details-->", jo_inside.getString("name"));
-                String stop_value = jo_inside.getString("name");
-                String time_value = jo_inside.getString("term_time");
+                JSONObject jsonObject = dataArray.getJSONObject(i);
+                Log.d("Details-->", jsonObject.getString("name"));
+                String stop_value = jsonObject.getString("name");
+                String time_value = jsonObject.getString("term_time");
 
                 //Add your values in your `ArrayList` as below:
                 m_li = new HashMap<String, String>();
