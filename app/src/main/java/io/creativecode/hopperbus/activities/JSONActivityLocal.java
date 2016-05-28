@@ -36,8 +36,8 @@ public class JSONActivityLocal extends ActionBarActivity {
     InputStream inputstream;
     BufferedReader reader;
     String m;
-    String movie;
-    String category;
+    String busId;
+    String stopName;
     String title;
     ListView list;
     List<Map<String, String>> busdata;
@@ -78,10 +78,10 @@ public class JSONActivityLocal extends ActionBarActivity {
                     for (int i = 0; i < arraylength; i++) {
                         Map<String, String> busmap = new HashMap<String, String>();
                         JSONObject jsonChildNode = jsonArray.getJSONObject(i);
-                        movie = jsonChildNode.optString("id").toString();
-                        category = jsonChildNode.optString("name").toString();
-                        busmap.put("A", movie);
-                        busmap.put("B", category);
+                        busId = jsonChildNode.optString("id").toString();
+                        stopName = jsonChildNode.optString("name").toString();
+                        busmap.put("A", busId);
+                        busmap.put("B", stopName);
                         busdata.add(busmap);
                     }
                     String[] from = {"A", "B"};
