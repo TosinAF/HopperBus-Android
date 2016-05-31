@@ -4,49 +4,61 @@ package io.creativecode.hopperbus.presenters;
 import android.content.Context;
 import android.util.Log;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.IOException;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
+import java.io.InputStream;
 
 
 public class DataProvider {
 
     private Context mContext;
 
+    private JSONObject json;
+
     public DataProvider(Context context) {
 
         this.mContext = context;
 
-        String json = "hshshshs";
+        String jsonString = loadJSONFromAsset();
 
-        Log.i("hi hi hi", "hi hi hi");
-
-        StringBuffer sb = new StringBuffer();
-        BufferedReader br = null;
         try {
-            br = new BufferedReader(new InputStreamReader(mContext.getAssets().open(
-                    "Routes.json")));
-            Log.i("im here", "json file");
-            String temp;
-            while ((temp = br.readLine()) != null)
-                sb.append(temp);
-        } catch (IOException e) {
-            e.printStackTrace();
-            Log.i("failes", "json file");
-        } finally {
-            try {
-                br.close(); // stop reading
-                Log.i("stop", "json file");
-            } catch (IOException e) {
-                e.printStackTrace();
-                Log.i("failed again", "json file");
-            }
+
+            this.json = new JSONObject(jsonString);
+            JSONObject o = json.getJSONObject("route903");
+            Log.i("Data Provider Route 903", o.toString());
+            RouteViewModel viewModel = new RouteViewModel(o);
+
+        } catch (JSONException ex) {
+            ex.printStackTrace();
+            Log.i("Error Parsing", "Error occurred when reading json");
         }
-        String myjsonstring = sb.toString();
-        Log.i(myjsonstring, "json file");
+
+       // RouteViewModel viewModel = new RouteViewModel()
+
+    }
 
 
-        //JSONObject obj = new JSONObject(json_return_by_the_function);
 
+    public String loadJSONFromAsset() {
+
+        String json = null;
+
+        try {
+
+            InputStream is = mContext.getAssets().open("Routes.json");
+            int size = is.available();
+            byte[] buffer = new byte[size];
+            is.read(buffer);
+            is.close();
+            json = new String(buffer, "UTF-8");
+
+        } catch (IOException ex) {
+            ex.printStackTrace();
+            return null;
+        }
+
+        return json;
     }
 }

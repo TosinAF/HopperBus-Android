@@ -17,7 +17,6 @@ import io.creativecode.hopperbus.views.adapters.RouteAdapter;
 import io.creativecode.hopperbus.views.adapters.RouteStopTimesAdapter;
 import io.creativecode.hopperbus.views.widgets.SlidingTabLayout;
 
-
 public class RouteFragment extends Fragment {
 
     static final String LOG_TAG = "RouteFragment";
